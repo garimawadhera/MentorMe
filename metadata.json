@@ -1,0 +1,7 @@
+{
+  "name": "MentorMe Kids",
+  "description": "A safe and engaging platform for children aged 9-15 to interact 1-on-1 with virtual mentors specializing in Science, Art, Coding, and more.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
