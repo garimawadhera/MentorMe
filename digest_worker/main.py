@@ -7,7 +7,7 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 
 from digest_worker.config import Settings, load_settings
-from digest_worker.runner import DigestRunner
+from digest_worker.runner import run_daily_digest
 
 
 logging.basicConfig(
@@ -23,8 +23,7 @@ def _is_scheduled_time(settings: Settings) -> bool:
 
 
 def _run_once(settings: Settings) -> None:
-    runner = DigestRunner(settings=settings)
-    result = runner.run_once()
+    result = run_daily_digest(settings=settings)
     logger.info(
         "Digest sent: topics=%s articles=%d subscribers=%d messages=%d",
         ", ".join(result["topics"]),
